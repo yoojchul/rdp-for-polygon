@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from rdp import rdp 
 
-with open("c:/Users/rcjcyoo/Downloads/seoul_municipalities_geo.json", encoding='utf-8') as json_file:
-    jdata = json_file.read()
-    geoJSON = json.loads(jdata)
+html = urlopen("https://raw.githubusercontent.com/southkorea/seoul-maps/master/kostat/2013/json/seoul_municipalities_geo.json")
+jdata = html.read().decode('utf-8')
+geoJSON = json.loads(jdata)
 
 fig = plt.figure(figsize=(12, 12))
 ax = fig.gca()
